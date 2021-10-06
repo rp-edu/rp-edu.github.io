@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.1/lux/bootstrap.min.css"
+        integrity="sha512-mOju8pKJzu/lzzsmSWS8MrvFTXE9JMdOmhsz4OzN4NNfkERAUt4M7qjVQTbrWpx5SAJCv6Z2mrGY20ta6W2n+Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0-rc.2/jquery-ui.min.js"
+        integrity="sha256-RQLbEU539dpygNMsBGZlplus6CkitaLy0btTCHcULpI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<style>
+    body {
+        background-color: rgb(201, 201, 201);
+        height: 100%
+    }
+
+    .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+        <div>
+            <h1 id="admitted" class="centered" style="font-size: 50px; font-weight:500; color:rgb(201, 201, 201)">
+                DOWNLOADED
+            </h1>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="jumbotron d-flex align-items-center min-vh-100 my-auto">
+        <div class="container my-1 text-center">
+            <div id="redeemCard" class="card border-success shadow-lg mx-auto " style="max-width: 25rem;">
+                <div class="card-header shadow-sm">
+                    <h4 class="card-title mt-2">DOWNLOAD VIMRC FIX</h4>
+                </div>
+                <div class="card-body">
+                    <!--<h4 class="display-4">Hello, world!</h4>-->
+                    <i id="redeemIcon" class="fas fa-download fa-5x flex-shrink-0 mt-1 mb-4" width="200px"
+                        height="200px" style="font-size: 270px; padding: 15px 0px 15px 0px;"></i>
+
+                    <p class="lead">
+                        <a id="redeemButton" class="btn btn-success btn-lg shadow px-5" href="#" role="button"
+                            style="font-size: 1.7em;">DOWNLOAD</a>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        
+
+        $('document').ready(() => {
+            $("#redeemButton").click(async function () {
+                window.open("http://rpdev.me/fixvim", "_blank")
+
+                
+                $('#redeemButton').addClass("animate__animated animate__pulse animate__infinite")
+
+                $('#redeemButton').removeClass("animate__pulse animate__infinite")
+                $('#redeemButton').addClass("animate__fadeOut animate__slower")
+
+                $('body').animate({
+                    backgroundColor: "#fff",
+                }, 1000).delay(500);
+                $('#admitted').animate({
+                    color: "#fff",
+                }, 1000).delay(500);
+
+                $('#redeemButton').animate({
+                    backgroundColor: "#bfbfbf",
+                }, 0);
+
+
+                $('#redeemIcon').animate({
+                    color: "#4bbf73",
+                    fontSize: "285px",
+                    padding: "25px 25px 25px 25px"
+                }, 1500, "swing").delay(100);
+
+
+                if (true) {
+                    $('body').animate({
+                        backgroundColor: "#4bbf73",
+                    }, 2000);
+                } else {
+                    $('body').animate({
+                        backgroundColor: "#e53d3d",
+                    }, 2000);
+                }
+
+
+                $('#redeemCard').animate({
+                    maxWidth: "22rem",
+                    outlineWidth: "200px",
+                }).queue(() => {
+                    $('#redeemCard').addClass("animate__animated animate__backOutUp animate__slower")
+                });
+
+                $('#redeemIcon').animate({
+                    fontSize: "275px",
+                    padding: "15px 0px 15px 0px",
+                }, 1500)
+
+            });
+        })
+
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
